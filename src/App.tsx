@@ -28,7 +28,6 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
-
       </Router>
     </div>
   );
