@@ -16,14 +16,19 @@ const productSlice = createSlice({
   name: "productReducer",
   initialState,
   reducers: {
-    
+    addProduct: (state, action) => {
+      state.push(action.payload)
+    }
+
   },
   extraReducers(builder) {
     builder.addCase(fetchProducts.fulfilled, (state, action) => {
       state = [...action.payload]
+      console.log('state', state)
       return state
     });
   },
 });
 
 export const productReducer = productSlice.reducer;
+export const { addProduct } = productSlice.actions

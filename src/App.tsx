@@ -16,8 +16,6 @@ function App() {
     dispatch(fetchProducts())
   }, [])
 
-  console.log(products)
-
   return (
     <div className="App">
       <Router>

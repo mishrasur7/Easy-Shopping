@@ -1,21 +1,21 @@
-import React from 'react'
-import {AppBar, Toolbar} from '@mui/material'
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+
+import '../styles/components/navbar.scss'
 
 function NavBar() {
+  const linkStyle = {
+    textDecoration: 'none', 
+    color: 'black',
+    fontSize: '1.3em'
+  }
   return (
-    <div>
-      <AppBar>
-        <Toolbar>
-          <Link to='/'>Home</Link>
-          <Link to='/products'>Products</Link>
-          <Link to='/profile'>Profile</Link>
-          <Link to='/cart'>Cart</Link>
-        </Toolbar>
-      </AppBar>
-
+    <div className="navbar">
+      <Link to="/" style={linkStyle}>Home</Link>
+      <Link to="/products" style={linkStyle}>Products</Link>
+      <Link to="/profile" style={linkStyle}>Profile</Link>
+      <Link to="/cart" style={linkStyle}>Cart</Link>
     </div>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;
