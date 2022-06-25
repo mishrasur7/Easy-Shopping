@@ -54,11 +54,10 @@ function AddProduct() {
   return (
     <div>
       <Button
-        variant="contained"
+        variant="outlined"
         onClick={handleClickOpen}
-        style={{ marginLeft: 800 }}
       >
-        Add Product
+        Add Product to store
       </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Add new product</DialogTitle>

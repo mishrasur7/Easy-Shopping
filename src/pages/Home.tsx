@@ -1,35 +1,14 @@
-import {
-  Card,
-  CardContent,
-  CardMedia,
-  CardHeader,
-  Typography,
-  Button,
-} from "@mui/material";
-
 import { useAppSelector } from "../redux/hooks";
-import "../styles/pages/home.scss";
 import AddProduct from "../components/AddProduct";
+import SearchProducts from "../components/SearchProducts";
 
 function Home() {
   const products = useAppSelector((state) => state.productReducer);
+  
   return (
-    <div>
+    <div style={{margin: '1em 5em'}}>
       <AddProduct />
-      <div className="products">
-        {products.map((product) => (
-          <Card key={product.id} className="card">
-            <CardHeader title={product.id} />
-            <CardMedia component="img" image={product.images[0]} />
-            <CardContent>
-              <Typography>Description: {product.title}</Typography>
-              <Typography>Price: {product.price} $</Typography>
-              <br />
-              <Button>Add to cart</Button>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+      <SearchProducts />
     </div>
   );
 }

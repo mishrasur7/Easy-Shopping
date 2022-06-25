@@ -1,11 +1,17 @@
+.textfield {
+    width: 15em;
+    position: relative;
+    left: 65em;
+    bottom: 6em; 
+}
 .products {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 5em 3em;
+    gap: 2em;
 }
 
 .card {
-    width: 20em;
+    width: 18em;
 }
