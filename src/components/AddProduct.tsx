@@ -8,7 +8,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogActions from "@mui/material/DialogActions";
 
-import { useAppDispatch } from "../redux/hooks";
+import { useAppDispatch } from "../redux/hooks/appHooks";
 import { addProduct } from "../redux/reducers/productReducer";
 
 function AddProduct() {

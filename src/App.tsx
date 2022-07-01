@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Profile from "./pages/Profile";
 import SingleProduct from "./pages/SingleProduct";
-import { useAppDispatch, useAppSelector } from "./redux/hooks";
+import { useAppDispatch, useAppSelector } from "./redux/hooks/appHooks";
 import { fetchProducts } from "./redux/reducers/productReducer";
 
 function App() {
@@ -22,11 +22,11 @@ function App() {
       <Router>
         <NavBar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products">
-            <Route path="" element={<Products />} />
+          <Route path="/">
+            <Route path="" element={<Home />} />
             <Route path=":productId" element={<SingleProduct />} />
           </Route>
+          <Route path="" element={<Products />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>

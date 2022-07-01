@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, CardContent, Typography } from '@mui/material';
 
-import { useAppSelector } from "../redux/hooks";
+import { useAppSelector } from "../redux/hooks/appHooks";
 import '../styles/components/searchproduct.scss'
 
 

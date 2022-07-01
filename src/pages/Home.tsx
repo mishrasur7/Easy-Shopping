@@ -1,4 +1,4 @@
-import { useAppSelector } from "../redux/hooks";
+import { useAppSelector } from "../redux/hooks/appHooks";
 import AddProduct from "../components/AddProduct";
 import SearchProducts from "../components/SearchProducts";
 

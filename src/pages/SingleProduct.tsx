@@ -1,8 +1,14 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
+import useProduct from '../redux/hooks/useProduct'
 
 const SingleProduct = () => {
+    const { productId } = useParams()
+    const product = useProduct(productId)
   return (
-    <div>SingleProduct</div>
+    <div>
+        {product ? (<div>{product.title}</div>) : (<div>Product does not exist</div>)}
+    </div>
   )
 }
 
