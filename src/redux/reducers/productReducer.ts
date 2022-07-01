@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { stat } from "fs";
 import { Product } from "../types/product";
 
 const initialState: Product[] = [];
@@ -18,6 +19,20 @@ const productSlice = createSlice({
   reducers: {
     addProduct: (state, action) => {
       state.push(action.payload)
+    }, 
+    updateProduct: (state, action) => {
+      state.filter(product => {
+        if(product.id === action.payload.id) {
+          product = {
+            ...product,
+            ...action.payload.update
+          }
+        }
+      })
+    }, 
+    deleteProduct: (state, action) => {
+      state = state.filter(product => product.id !== action.payload)
+      return state
     }
 
   },

@@ -57,7 +57,7 @@ function AddProduct() {
         variant="outlined"
         onClick={handleClickOpen}
       >
-        Add Product to store
+        Add Product
       </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Add new product</DialogTitle>

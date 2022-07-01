@@ -6,15 +6,16 @@ import Cart from "./pages/Cart";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Profile from "./pages/Profile";
+import SingleProduct from "./pages/SingleProduct";
 import { useAppDispatch, useAppSelector } from "./redux/hooks";
 import { fetchProducts } from "./redux/reducers/productReducer";
 
 function App() {
-  const dispatch = useAppDispatch()
-  const products = useAppSelector(state => state.productReducer)
+  const dispatch = useAppDispatch();
+  const products = useAppSelector((state) => state.productReducer);
   useEffect(() => {
-    dispatch(fetchProducts())
-  }, [])
+    dispatch(fetchProducts());
+  }, []);
 
   return (
     <div className="App">
@@ -22,7 +23,10 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
+          <Route path="/products">
+            <Route path="" element={<Products />} />
+            <Route path=":productId" element={<SingleProduct />} />
+          </Route>
           <Route path="/profile" element={<Profile />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
