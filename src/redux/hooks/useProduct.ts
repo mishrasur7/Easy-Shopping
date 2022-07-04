@@ -3,7 +3,6 @@ import { Product } from "../types/product";
 
 const useProduct = (productId: string | undefined) => {
   const [product, setProduct] = useState<Product | undefined>(undefined);
-//   const url = "https://api.escuelajs.co/api/v1/products";
   useEffect(() => {
     if(productId) {
         fetch(`https://api.escuelajs.co/api/v1/products/${productId}`)

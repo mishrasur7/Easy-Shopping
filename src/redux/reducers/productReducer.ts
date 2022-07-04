@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { stat } from "fs";
 import { Product } from "../types/product";
 
 const initialState: Product[] = [];
@@ -31,8 +30,7 @@ const productSlice = createSlice({
       })
     }, 
     deleteProduct: (state, action) => {
-      state = state.filter(product => product.id !== action.payload)
-      return state
+      return state.filter(product => product.id !== action.payload)
     }
 
   },
@@ -46,4 +44,4 @@ const productSlice = createSlice({
 });
 
 export const productReducer = productSlice.reducer;
-export const { addProduct } = productSlice.actions
+export const { addProduct, updateProduct, deleteProduct } = productSlice.actions
