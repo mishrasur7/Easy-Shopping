@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Product } from "../types/product";
 
 const initialState: Product[] = [];
@@ -14,7 +14,7 @@ export const fetchProducts = createAsyncThunk("fetchProducts", async () => {
 
 export const deleteProductFromAPI = createAsyncThunk(
   "deleteProductFromAPI",
-  async (productId: number) => {
+  async (productId: string) => {
     try {
       const data = await fetch(
         `https://api.escuelajs.co/api/v1/products/${productId}`,
@@ -50,12 +50,10 @@ const productSlice = createSlice({
   },
   extraReducers(builder) {
     builder
-      .addCase(fetchProducts.fulfilled, (state, action) => {
-        state = [...action.payload];
-        console.log("state", state);
-        return state;
+      .addCase(fetchProducts.fulfilled, (state, action:PayloadAction<Product[]>) => {
+        return action.payload.sort((a, b) => a.price - b.price)
       })
-      .addCase(deleteProductFromAPI.fulfilled, (state, action) => {
+      .addCase(deleteProductFromAPI.fulfilled, (state, action:PayloadAction<string|undefined>) => {
         return state.filter((product) => product.id !== action.payload);
       });
   },

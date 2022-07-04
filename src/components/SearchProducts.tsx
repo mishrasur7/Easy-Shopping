@@ -92,7 +92,7 @@ function SearchProducts(): JSX.Element {
       </div>
       <Snackbar
         open={open}
-        autoHideDuration={3000}
+        autoHideDuration={4000}
         onClose={handleClose}
         message={message}
       />
