@@ -7,7 +7,7 @@ const SingleProduct = () => {
     const product = useProduct(productId)
   return (
     <div>
-        {product ? (<div>{product.title}</div>) : (<div>Product does not exist</div>)}
+        {product && (<div>{product.title}</div>)}
     </div>
   )
 }
