@@ -8,6 +8,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogActions from "@mui/material/DialogActions";
 
+
 import { useAppDispatch } from "../redux/hooks/appHooks";
 import { addProduct } from "../redux/reducers/productReducer";
 
@@ -53,10 +54,7 @@ function AddProduct() {
 
   return (
     <div>
-      <Button
-        variant="outlined"
-        onClick={handleClickOpen}
-      >
+      <Button variant="contained" onClick={handleClickOpen}>
         Add Product
       </Button>
       <Dialog open={open} onClose={handleClose}>

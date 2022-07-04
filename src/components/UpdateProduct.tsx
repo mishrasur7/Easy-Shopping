@@ -18,8 +18,7 @@ const UpdateProduct = () => {
   const [product, setProduct] = useState({
     id: "",
     title: "",
-    price: "",
-    images: [],
+    price: ""
   });
 
   //open state set to false
@@ -41,8 +40,7 @@ const UpdateProduct = () => {
     setProduct({
       id: "",
       title: "",
-      price: "",
-      images: [],
+      price: ""
     });
     setOpen(false);
   };
@@ -58,9 +56,9 @@ const UpdateProduct = () => {
         <EditIcon color="primary"/>
       </IconButton>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Add new product</DialogTitle>
+        <DialogTitle>Update product</DialogTitle>
         <DialogContentText style={{ marginLeft: 25 }}>
-          Please fill in each product details.
+          Please update if it needs.
         </DialogContentText>
         <DialogContent>
           <TextField
@@ -87,15 +85,6 @@ const UpdateProduct = () => {
             value={product.price}
             onChange={inputchanged}
             label="Product price"
-            fullWidth
-            variant="standard"
-          />
-          <TextField
-            margin="dense"
-            name="images"
-            value={product.images}
-            onChange={inputchanged}
-            label="image url"
             fullWidth
             variant="standard"
           />

@@ -16,7 +16,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { useAppDispatch, useAppSelector } from "../redux/hooks/appHooks";
 import "../styles/components/searchproduct.scss";
 import UpdateProduct from "./UpdateProduct";
-import { deleteProduct } from "../redux/reducers/productReducer";
+import { deleteProductFromAPI } from "../redux/reducers/productReducer";
 
 function SearchProducts(): JSX.Element {
   const products = useAppSelector((state) => state.productReducer);
@@ -30,9 +30,9 @@ function SearchProducts(): JSX.Element {
   };
 
   const dispatch = useAppDispatch();
-  const onDelete = (id: number | undefined) => {
+  const onDelete = (id: any) => {
     if (window.confirm("Are you sure that you want to delete this product?")) {
-      dispatch(deleteProduct(id));
+      dispatch(deleteProductFromAPI(id));
     }
     setOpen(true);
     setMessage("Product deleted successfully!");
