@@ -6,6 +6,8 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogActions from "@mui/material/DialogActions";
+import { IconButton } from "@mui/material";
+import EditIcon from "@mui/icons-material/Edit";
 
 import { useAppDispatch } from "../redux/hooks/appHooks";
 import { updateProduct } from "../redux/reducers/productReducer";
@@ -52,9 +54,9 @@ const UpdateProduct = () => {
 
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Update
-      </Button>
+      <IconButton onClick={handleClickOpen}>
+        <EditIcon color="primary"/>
+      </IconButton>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Add new product</DialogTitle>
         <DialogContentText style={{ marginLeft: 25 }}>

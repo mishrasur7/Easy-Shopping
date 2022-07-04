@@ -10,6 +10,8 @@ import {
   Box,
   Snackbar,
 } from "@mui/material";
+import { IconButton } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 import { useAppDispatch, useAppSelector } from "../redux/hooks/appHooks";
 import "../styles/components/searchproduct.scss";
@@ -72,18 +74,15 @@ function SearchProducts(): JSX.Element {
                   <Typography>Price: {value.price} $</Typography>
                   <Box
                     style={{
-                      margin: 20,
+                      marginTop: 20,
                       display: "flex",
                       justifyContent: "space-between",
                     }}
                   >
                     <UpdateProduct />
-                    <Button
-                      onClick={() => onDelete(value.id)}
-                      variant="outlined"
-                    >
-                      Delete
-                    </Button>
+                    <IconButton onClick={() => onDelete(value.id)}>
+                      <DeleteIcon color="error" />
+                    </IconButton>
                   </Box>
                   <Button className="add__to--cart">Add to cart</Button>
                 </CardContent>
