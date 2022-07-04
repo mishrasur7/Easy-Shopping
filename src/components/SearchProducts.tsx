@@ -33,9 +33,9 @@ function SearchProducts(): JSX.Element {
   const onDelete = (id: any) => {
     if (window.confirm("Are you sure that you want to delete this product?")) {
       dispatch(deleteProductFromAPI(id));
+      setOpen(true);
+      setMessage("Product deleted successfully!");
     }
-    setOpen(true);
-    setMessage("Product deleted successfully!");
   };
 
   return (
@@ -84,7 +84,7 @@ function SearchProducts(): JSX.Element {
                       <DeleteIcon color="error" />
                     </IconButton>
                   </Box>
-                  <Button className="add__to--cart">Add to cart</Button>
+                  <Button className="add__to--cart" onClick={() => alert('Cannot add this item to cart!')}>Add to cart</Button>
                 </CardContent>
               </Card>
             );

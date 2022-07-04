@@ -7,14 +7,13 @@ import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Profile from "./pages/Profile";
 import SingleProduct from "./pages/SingleProduct";
-import { useAppDispatch, useAppSelector } from "./redux/hooks/appHooks";
+import { useAppDispatch } from "./redux/hooks/appHooks";
 import { fetchProducts } from "./redux/reducers/productReducer";
 
 function App() {
   const dispatch = useAppDispatch();
-  const products = useAppSelector((state) => state.productReducer);
   useEffect(() => {
-    dispatch(fetchProducts());
+    dispatch(fetchProducts({offset:0, limit:21}));
   }, []);
 
   return (

@@ -1,10 +1,10 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Product } from "../types/product";
+import { FetchProductsParams, Product } from "../types/product";
 
 const initialState: Product[] = [];
-export const fetchProducts = createAsyncThunk("fetchProducts", async () => {
+export const fetchProducts = createAsyncThunk("fetchProducts", async ({offset, limit}: FetchProductsParams) => {
   try {
-    const data = await fetch("https://api.escuelajs.co/api/v1/products");
+    const data = await fetch(`https://api.escuelajs.co/api/v1/products?offset=${offset}&limit=${limit}`);
     const result = await data.json();
     return result;
   } catch (error) {
