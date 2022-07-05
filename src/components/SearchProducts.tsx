@@ -16,7 +16,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { useAppDispatch, useAppSelector } from "../redux/hooks/appHooks";
 import "../styles/components/searchproduct.scss";
 import UpdateProduct from "./UpdateProduct";
-import { deleteProductFromAPI } from "../redux/reducers/productReducer";
+import { deleteProductFromAPI, fetchProducts } from "../redux/reducers/productReducer";
 
 function SearchProducts(): JSX.Element {
   const products = useAppSelector((state) => state.productReducer);

@@ -13,7 +13,7 @@ import { fetchProducts } from "./redux/reducers/productReducer";
 function App() {
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(fetchProducts({offset:0, limit:21}));
+    dispatch(fetchProducts({ offset: 0, limit: 21 }));
   }, []);
 
   return (
@@ -21,11 +21,11 @@ function App() {
       <Router>
         <NavBar />
         <Routes>
-          <Route path="/">
-            <Route path="" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/products">
+            <Route path="" element={<Products />} />
             <Route path=":productId" element={<SingleProduct />} />
           </Route>
-          <Route path="/products" element={<Products />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
