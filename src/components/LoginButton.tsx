@@ -2,13 +2,22 @@ import GoogleLogin, {
   GoogleLoginResponse,
   GoogleLoginResponseOffline,
 } from "react-google-login";
+import { useAppDispatch } from "../redux/hooks/appHooks";
+import { login } from "../redux/reducers/userReducer";
+import { User } from "../redux/types/user";
 
 const LoginButton = () => {
-    
-  const responseGoogle = (
-    response: GoogleLoginResponse | GoogleLoginResponseOffline
-  ) => {
-    
+  const dispatch = useAppDispatch()
+  const responseGoogle = (response: GoogleLoginResponse | GoogleLoginResponseOffline) => {
+    if('profileObj' in response) {
+      const user:User = {
+      firstName: response.profileObj.givenName, 
+      lastName: response.profileObj.familyName, 
+      id: response.profileObj.googleId, 
+      email: response.profileObj.email
+      }
+      dispatch(login(user))
+    }
   };
 
   return (
