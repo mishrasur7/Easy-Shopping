@@ -7,7 +7,6 @@ function Products() {
     <div style={{ margin: "1em 5em" }}>
       <AddProduct />
       <SearchProducts />
-      <PagePagination />
     </div>
   );
 }

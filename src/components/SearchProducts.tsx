@@ -16,7 +16,8 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { useAppDispatch, useAppSelector } from "../redux/hooks/appHooks";
 import "../styles/components/searchproduct.scss";
 import UpdateProduct from "./UpdateProduct";
-import { deleteProductFromAPI, fetchProducts } from "../redux/reducers/productReducer";
+import { deleteProductFromAPI } from "../redux/reducers/productReducer";
+import PagePagination from "./PagePagination";
 
 function SearchProducts(): JSX.Element {
   const products = useAppSelector((state) => state.productReducer);
@@ -90,6 +91,7 @@ function SearchProducts(): JSX.Element {
             );
           })}
       </div>
+      <PagePagination/>
       <Snackbar
         open={open}
         autoHideDuration={4000}

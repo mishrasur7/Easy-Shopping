@@ -8,7 +8,6 @@ export const fetchProducts = createAsyncThunk("fetchProducts", async ({offset, l
     const result = await data.json();
     return result;
   } catch (error) {
-    console.log(error);
   }
 });
 
