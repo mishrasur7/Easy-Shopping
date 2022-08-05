@@ -1,3 +1,15 @@
 .login {
     margin-bottom: 40em;
 }
+
+.login_form {
+    align-items: center;
+    margin: 5em 35em;
+    padding: 1em;
+    width: 20em;
+    height: 20em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    border: 0.1em solid gray;
+}

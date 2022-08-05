@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Footer from "./components/Footer";
-import LoginButton from "./components/LoginButton";
 
+import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import Cart from "./pages/Cart";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
 import Products from "./pages/Products";
 import SingleProduct from "./pages/SingleProduct";
 import { useAppDispatch } from "./redux/hooks/appHooks";
@@ -27,7 +27,7 @@ function App() {
             <Route path="" element={<Products />} />
             <Route path=":productId" element={<SingleProduct />} />
           </Route>
-          <Route path="/sign-in" element={<LoginButton />} />
+          <Route path="/sign-in" element={<Login />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </Router>
