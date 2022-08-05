@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.homepage {
+    margin-top: 3em;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2em;
+    color: #31087B;
+}
+
+.button_shopping {
+    border: 0.5em, solid;
+    border-radius: 0.7em;
+    padding: 0.3em;
+    font-size: 0.8em;
+    background-color: #59CE8F;
+    cursor: pointer;
+}

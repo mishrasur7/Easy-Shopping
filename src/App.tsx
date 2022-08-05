@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Footer from "./components/Footer";
 import LoginButton from "./components/LoginButton";
 
 import NavBar from "./components/NavBar";
@@ -30,6 +31,7 @@ function App() {
           <Route path="/sign-in" element={<LoginButton />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );
