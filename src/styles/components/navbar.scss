@@ -1,9 +1,15 @@
 
+* {
+    margin: 0;
+    padding: 0;
+}
 .main_nav {
+    -webkit-margin-collapse: collapse;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 1em 5em;
+    padding: 1.5em 5em;
+    background-color: #002B5B;
 }
 
 .navbar_home_products {

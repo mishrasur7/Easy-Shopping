@@ -1,9 +1,10 @@
 import AddProduct from "../components/AddProduct";
 import SearchProducts from "../components/SearchProducts";
+import "../styles/pages/products.scss";
 
 function Products() {
   return (
-    <div style={{ margin: "1em 5em" }}>
+    <div className="addProduct_searchProduct">
       <AddProduct />
       <SearchProducts />
     </div>

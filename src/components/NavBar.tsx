@@ -7,7 +7,7 @@ import LoginButton from "./LoginButton";
 function NavBar() {
   const linkStyle = {
     textDecoration: "none",
-    color: "black",
+    color: "white",
     fontSize: "1.3em",
   };
   return (
