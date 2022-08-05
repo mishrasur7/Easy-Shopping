@@ -1,7 +1,7 @@
 import { useAppSelector } from "../redux/hooks/appHooks";
 
 function Profile() {
-  const user = useAppSelector((state) => state.userReducer.user);
+  const user = useAppSelector((state) => state.userReducer.currentUser);
   return (
     <div>
       {user ? (

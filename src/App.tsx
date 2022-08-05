@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LoginButton from "./components/LoginButton";
 
 import NavBar from "./components/NavBar";
 import Cart from "./pages/Cart";
@@ -26,7 +27,7 @@ function App() {
             <Route path="" element={<Products />} />
             <Route path=":productId" element={<SingleProduct />} />
           </Route>
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/sign-in" element={<LoginButton />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </Router>

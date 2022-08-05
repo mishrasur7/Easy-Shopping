@@ -1,5 +1,4 @@
 import AddProduct from "../components/AddProduct";
-import PagePagination from "../components/PagePagination";
 import SearchProducts from "../components/SearchProducts";
 
 function Products() {

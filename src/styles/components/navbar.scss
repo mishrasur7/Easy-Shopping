@@ -1,13 +1,19 @@
-.navbar {
-    display: flex;
-    flex-direction: row;
-    gap: 2.5em;
-    padding: 1em 5em;
-}
 
 .main_nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-right: 1em;
+    padding: 1em 5em;
+}
+
+.navbar_home_products {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+}
+
+.navbar_login_cart_theme {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
 }
