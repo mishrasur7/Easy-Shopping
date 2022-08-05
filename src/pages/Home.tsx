@@ -1,10 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import "../styles/pages/home.scss";
 
-
 function Home() {
   const navigate = useNavigate()
-
   const navigateToProducts = () => {
     navigate('/products')
   }

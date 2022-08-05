@@ -5,6 +5,7 @@ import GoogleLogin, {
 import { useAppDispatch } from "../redux/hooks/appHooks";
 import { login } from "../redux/reducers/userReducer";
 import { User } from "../redux/types/user";
+import '../styles/pages/login.scss'
 
 const LoginButton = () => {
   const dispatch = useAppDispatch()
@@ -21,7 +22,7 @@ const LoginButton = () => {
   };
 
   return (
-    <div>
+    <div className="login">
 
       <GoogleLogin
         clientId="799545640286-5nturnrrd43mb260cbuen1btfkfnkuqb.apps.googleusercontent.com"

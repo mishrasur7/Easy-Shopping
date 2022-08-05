@@ -7,7 +7,6 @@ import NavBar from "./components/NavBar";
 import Cart from "./pages/Cart";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
-import Profile from "./pages/Profile";
 import SingleProduct from "./pages/SingleProduct";
 import { useAppDispatch } from "./redux/hooks/appHooks";
 import { fetchProducts } from "./redux/reducers/productReducer";
@@ -31,8 +30,8 @@ function App() {
           <Route path="/sign-in" element={<LoginButton />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
-        <Footer />
       </Router>
+      <Footer />
     </div>
   );
 }

@@ -1,8 +1,10 @@
-import React from 'react'
+import '../styles/pages/cart.scss'
 
 function Cart() {
   return (
-    <div>Cart</div>
+    <div className='cart'>
+
+    </div>
   )
 }
 
