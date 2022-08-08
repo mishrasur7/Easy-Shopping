@@ -31,11 +31,11 @@ export const login = createAsyncThunk("login", async (userLogin: Login) => {
     },
     body: JSON.stringify(userLogin),
   });
-  const authoRizationToken = await response.json();
-  if (authoRizationToken.access_token) {
+  const authorizationToken = await response.json();
+  if (authorizationToken.access_token) {
     localStorage.setItem(
       "token",
-      JSON.stringify(authoRizationToken.access_token)
+      JSON.stringify(authorizationToken.access_token)
     );
     const sessionUser = await fetch(
       "https://api.escuelajs.co/api/v1/auth/profile",
@@ -75,7 +75,11 @@ export const loginByToken = createAsyncThunk(
 const userSlice = createSlice({
   name: "userReducer",
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    adduser(state, action) {
+      state.userlist.push(action.payload)
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchAllUsers.fulfilled, (state, action) => {
@@ -90,5 +94,5 @@ const userSlice = createSlice({
   },
 });
 
-const userReducer = userSlice.reducer;
-export default userReducer;
+export const userReducer = userSlice.reducer;
+export const { adduser } = userSlice.actions; 
