@@ -1,6 +1,7 @@
 export interface User {
   id: string;
-  name: string;
+  firstName: string;
+  lastName: string;
   password: string | undefined;
   email: string;
   role: UserRole;
@@ -16,5 +17,5 @@ export type UserRole = "customer" | "admin";
 
 export interface Login {
     email: string, 
-    password: string
+    password: string | undefined
 }

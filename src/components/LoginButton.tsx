@@ -4,7 +4,7 @@ import GoogleLogin, {
 } from "react-google-login";
 import { useAppDispatch } from "../redux/hooks/appHooks";
 import { login } from "../redux/reducers/userReducer";
-import { User } from "../redux/types/user";
+import { Login, User } from "../redux/types/user";
 import '../styles/pages/login.scss'
 
 const LoginButton = () => {
@@ -12,12 +12,21 @@ const LoginButton = () => {
   const responseGoogle = (response: GoogleLoginResponse | GoogleLoginResponseOffline) => {
     if('profileObj' in response) {
       const user:User = {
+      id: response.profileObj.googleId,
       firstName: response.profileObj.givenName, 
       lastName: response.profileObj.familyName, 
-      id: response.profileObj.googleId, 
-      email: response.profileObj.email
+      email: response.profileObj.email,
+      password: undefined,
+      role: 'customer', 
+      avatar: undefined
+      } 
+
+      const userLogin:Login = {
+        email: user.email,
+        password: user.password
       }
-      dispatch(login(user))
+      
+      dispatch(login(userLogin))
     }
   };
 
