@@ -3,14 +3,22 @@ import {
   Card,
   CardContent,
   Typography,
+  Button,
 } from "@mui/material";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 
 import useProduct from "../redux/hooks/useProduct";
+import '../styles/pages/singleproduct.scss'
 
 const SingleProduct = () => {
   const { productId } = useParams();
   const product = useProduct(productId);
+  const navigate = useNavigate()
+  const navigateToProducts = () => {
+    navigate('/products')
+  }
+  
   return (
     <div className="view__product--details">
       {product && (
@@ -24,6 +32,7 @@ const SingleProduct = () => {
           </CardContent>
         </Card>
       )}
+      <Button onClick={navigateToProducts}><KeyboardBackspaceIcon className="back_button"/></Button>
     </div>
   );
 };
