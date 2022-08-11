@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
-import "../styles/components/navbar.scss";
-import LoginButton from "./LoginButton";
-
 function NavBar() {
   const linkStyle = {
     textDecoration: "none",

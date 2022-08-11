@@ -14,7 +14,6 @@ import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 import { useAppDispatch, useAppSelector } from "../redux/hooks/appHooks";
-import "../styles/components/searchproduct.scss";
 import UpdateProduct from "./UpdateProduct";
 import { deleteProductFromAPI } from "../redux/reducers/productReducer";
 import PagePagination from "./PagePagination";

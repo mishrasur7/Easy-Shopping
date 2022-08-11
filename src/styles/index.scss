@@ -1,1 +1,9 @@
-@use './pages/products.scss'
+@use './pages/products.scss';
+@use './pages/singleproduct.scss';
+@use './pages/home.scss';
+@use './pages/login.scss';
+@use './pages/cart.scss';
+@use './components/navbar.scss';
+@use './components/searchproduct.scss';
+@use './components/register.scss';
+@use './components/footer.scss';

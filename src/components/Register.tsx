@@ -1,8 +1,6 @@
 import { Button, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-import '../styles/components/register.scss'
-
 function Register() {
     const navigate = useNavigate()
     const navigateToLoginPage = () => {

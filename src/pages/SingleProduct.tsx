@@ -9,7 +9,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 
 import useProduct from "../redux/hooks/useProduct";
-import '../styles/pages/singleproduct.scss'
 
 const SingleProduct = () => {
   const { productId } = useParams();
