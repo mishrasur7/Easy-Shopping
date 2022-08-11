@@ -1,4 +1,4 @@
-import { fetchProducts } from "../../redux/reducers/productReducer";
+import { deleteProductFromAPI, fetchProducts } from "../../redux/reducers/productReducer";
 import createTestStore from "../utils/testStore";
 
 let store = createTestStore()
@@ -16,6 +16,13 @@ describe('testing product reducer', () => {
         }
         await store.dispatch(fetchProducts(pagination))
         expect(store.getState().productReducer.length).toBeGreaterThan(0)
+    })
+
+    //this test is not working properly
+    test('delete product from api', async () => {
+        const productId = '3'
+        await store.dispatch(deleteProductFromAPI(productId))
+        expect(store.getState().productReducer[0].title).toBe('Fantastic Granite Towels')
     })
 })
 
