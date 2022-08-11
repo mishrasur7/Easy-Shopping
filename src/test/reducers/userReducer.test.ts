@@ -16,5 +16,12 @@ describe('testing user reducer', () => {
         }))
         expect(store.getState().userReducer.currentUser).toBeDefined()
     })
+    test('user should not login with wrong credentials', async() => {
+        await store.dispatch(login({
+            email: 'surajmishra@gmail.com', 
+            password: '1234abcd'
+        }))
+        expect(store.getState().userReducer.currentUser).toBeUndefined()
+    })
 })
 
