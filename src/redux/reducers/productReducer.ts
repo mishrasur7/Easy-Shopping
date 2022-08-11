@@ -2,14 +2,18 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { FetchProductsParams, Product } from "../types/product";
 
 const initialState: Product[] = [];
-export const fetchProducts = createAsyncThunk("fetchProducts", async ({offset, limit}: FetchProductsParams) => {
-  try {
-    const data = await fetch(`https://api.escuelajs.co/api/v1/products?offset=${offset}&limit=${limit}`);
-    const result = await data.json();
-    return result;
-  } catch (error) {
+export const fetchProducts = createAsyncThunk(
+  "fetchProducts",
+  async ({ offset, limit }: FetchProductsParams) => {
+    try {
+      const data = await fetch(
+        `https://api.escuelajs.co/api/v1/products?offset=${offset}&limit=${limit}`
+      );
+      const result = await data.json();
+      return result;
+    } catch (error) {}
   }
-});
+);
 
 export const deleteProductFromAPI = createAsyncThunk(
   "deleteProductFromAPI",
@@ -46,15 +50,31 @@ const productSlice = createSlice({
         }
       });
     },
+    sortByCategory: (state, action: PayloadAction<string>) => {
+      state.filter((product) => {
+        return product.category.name === action.payload;
+      });
+    },
+    sortByPriceAsc: (state, action) => {
+      state.sort((a, b) => {
+        return a.price - b.price;
+      });
+    },
   },
   extraReducers(builder) {
     builder
-      .addCase(fetchProducts.fulfilled, (state, action:PayloadAction<Product[]>) => {
-        return action.payload.sort((a, b) => a.price - b.price)
-      })
-      .addCase(deleteProductFromAPI.fulfilled, (state, action:PayloadAction<string|undefined>) => {
-        return state.filter((product) => product.id !== action.payload);
-      });
+      .addCase(
+        fetchProducts.fulfilled,
+        (state, action: PayloadAction<Product[]>) => {
+          return action.payload.sort((a, b) => a.price - b.price);
+        }
+      )
+      .addCase(
+        deleteProductFromAPI.fulfilled,
+        (state, action: PayloadAction<string | undefined>) => {
+          return state.filter((product) => product.id !== action.payload);
+        }
+      );
   },
 });
 
