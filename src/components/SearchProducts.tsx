@@ -17,6 +17,7 @@ import { useAppDispatch, useAppSelector } from "../redux/hooks/appHooks";
 import UpdateProduct from "./UpdateProduct";
 import { deleteProductFromAPI } from "../redux/reducers/productReducer";
 import PagePagination from "./PagePagination";
+import { addToCart } from "../redux/reducers/cartReducer";
 
 function SearchProducts(): JSX.Element {
   const products = useAppSelector((state) => state.productReducer);
@@ -37,6 +38,14 @@ function SearchProducts(): JSX.Element {
       setMessage("Product deleted successfully!");
     }
   };
+
+  const addProductToCart = (productId: number) => {
+    if(productId) {
+      fetch(`https://api.escuelajs.co/api/v1/products${productId}`)
+      .then(response => response.json())
+      .then(data => dispatch(addToCart(data)))
+    }
+  }
 
   return (
     <div>
@@ -84,7 +93,7 @@ function SearchProducts(): JSX.Element {
                       <DeleteIcon color="error" />
                     </IconButton>
                   </Box>
-                  <Button className="add__to--cart" onClick={() => alert('Cannot add this item to cart!')}>Add to cart</Button>
+                  <Button className="add__to--cart" onClick={() => addProductToCart(value.id)}>Add to cart</Button>
                 </CardContent>
               </Card>
             );
