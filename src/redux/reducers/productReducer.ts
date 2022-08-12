@@ -1,5 +1,9 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { FetchProductsParams, Product } from "../types/product";
+import {
+  FetchProductsParams,
+  Product,
+  UpdateActionType,
+} from "../types/product";
 
 const initialState: Product[] = [];
 export const fetchProducts = createAsyncThunk(
@@ -40,15 +44,17 @@ const productSlice = createSlice({
     addProduct: (state, action) => {
       state.push(action.payload);
     },
-    updateProduct: (state, action) => {
-      state.filter((product) => {
+    updateProduct: (state, action: PayloadAction<UpdateActionType>) => {
+      const newState = state.map((product) => {
         if (product.id === action.payload.id) {
           product = {
             ...product,
             ...action.payload.update,
           };
         }
+        return product;
       });
+      return [...newState];
     },
     sortByCategory: (state, action: PayloadAction<string>) => {
       state.filter((product) => {
@@ -79,4 +85,5 @@ const productSlice = createSlice({
 });
 
 export const productReducer = productSlice.reducer;
-export const { addProduct, updateProduct, sortByCategory, sortByPriceAsc } = productSlice.actions;
+export const { addProduct, updateProduct, sortByCategory, sortByPriceAsc } =
+  productSlice.actions;

@@ -13,3 +13,8 @@ export interface FetchProductsParams {
   offset: number, 
   limit: number
 }
+
+export interface UpdateActionType {
+  id: number,
+  update: Partial<Product>
+}
