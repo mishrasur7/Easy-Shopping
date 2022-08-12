@@ -45,6 +45,7 @@ function SearchProducts(): JSX.Element {
         .then((response) => response.json())
         .then((data) => dispatch(addToCart(data)));
     }
+    setMessage('Product added to cart!')
   };
 
   return (
