@@ -5,7 +5,6 @@ import {
   Button,
   Card,
   CardActions,
-  CardContent,
   CardHeader,
   CardMedia,
   Typography,
