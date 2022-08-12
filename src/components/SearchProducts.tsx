@@ -40,12 +40,12 @@ function SearchProducts(): JSX.Element {
   };
 
   const addProductToCart = (productId: number) => {
-    if(productId) {
-      fetch(`https://api.escuelajs.co/api/v1/products${productId}`)
-      .then(response => response.json())
-      .then(data => dispatch(addToCart(data)))
+    if (productId) {
+      fetch(`https://api.escuelajs.co/api/v1/products/${productId}`)
+        .then((response) => response.json())
+        .then((data) => dispatch(addToCart(data)));
     }
-  }
+  };
 
   return (
     <div>
@@ -93,13 +93,18 @@ function SearchProducts(): JSX.Element {
                       <DeleteIcon color="error" />
                     </IconButton>
                   </Box>
-                  <Button className="add__to--cart" onClick={() => addProductToCart(value.id)}>Add to cart</Button>
+                  <Button
+                    className="add__to--cart"
+                    onClick={() => addProductToCart(value.id)}
+                  >
+                    Add to cart
+                  </Button>
                 </CardContent>
               </Card>
             );
           })}
       </div>
-      <PagePagination/>
+      <PagePagination />
       <Snackbar
         open={open}
         autoHideDuration={4000}

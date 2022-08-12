@@ -18,7 +18,7 @@ const UpdateProduct = () => {
   const [product, setProduct] = useState({
     id: "",
     title: "",
-    price: ""
+    price: "",
   });
 
   //open state set to false
@@ -36,11 +36,11 @@ const UpdateProduct = () => {
 
   //saves product data and closes the dialogue box
   const handleSave = () => {
-    dispatch(updateProduct(product));
+    // dispatch(updateProduct(product));
     setProduct({
       id: "",
       title: "",
-      price: ""
+      price: "",
     });
     setOpen(false);
   };
@@ -53,7 +53,7 @@ const UpdateProduct = () => {
   return (
     <div>
       <IconButton onClick={handleClickOpen}>
-        <EditIcon color="primary"/>
+        <EditIcon color="primary" />
       </IconButton>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Update product</DialogTitle>
