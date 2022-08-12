@@ -71,7 +71,7 @@ const productSlice = createSlice({
       )
       .addCase(
         deleteProductFromAPI.fulfilled,
-        (state, action: PayloadAction<string | undefined>) => {
+        (state, action: PayloadAction<string | number | undefined>) => {
           return state.filter((product) => product.id !== action.payload);
         }
       );
@@ -79,4 +79,4 @@ const productSlice = createSlice({
 });
 
 export const productReducer = productSlice.reducer;
-export const { addProduct, updateProduct } = productSlice.actions;
+export const { addProduct, updateProduct, sortByCategory, sortByPriceAsc } = productSlice.actions;
