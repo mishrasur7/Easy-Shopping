@@ -1,9 +1,17 @@
 # My first project with redux
 
 ## Key features available at the moment
-- Displays products from api in products page.\
-- Products can be added to cart.\
+- Displays products from api in products page.
+- Products can be added to cart.
+- Basic CRUD operations are avaiable 
 - Authentication via google.
+
+## Future plans
+- Enable theme for light and dark mode
+- Registering users, diaplaying their firstname on the screen
+- More secured authentication methods 
+- Restrict users to add, update, and delete products 
+- Make UI better 
 
 ## Instruction to start the project
 
