@@ -1,4 +1,4 @@
-# My first project with redux
+# My first project with typescript and redux
 
 ## Key features available at the moment
 - Displays products from api in products page.
