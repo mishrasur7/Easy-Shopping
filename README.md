@@ -1,4 +1,73 @@
-# My first project with typescript and redux
+# My first project with typescript, redux, and jest
+
+## Project structure overview
+<pre>
+├── README.md
+├── package-lock.json
+├── package.json
+├── public
+│   ├── index.html
+│   ├── manifest.json
+│   └── robots.txt
+├── src
+│   ├── App.tsx
+│   ├── components
+│   │   ├── AddProduct.tsx
+│   │   ├── Footer.tsx
+│   │   ├── LoginButton.tsx
+│   │   ├── NavBar.tsx
+│   │   ├── PagePagination.tsx
+│   │   ├── Register.tsx
+│   │   ├── SearchProducts.tsx
+│   │   └── UpdateProduct.tsx
+│   ├── index.tsx
+│   ├── pages
+│   │   ├── Cart.tsx
+│   │   ├── Home.tsx
+│   │   ├── Login.tsx
+│   │   ├── Products.tsx
+│   │   ├── Profile.tsx
+│   │   └── SingleProduct.tsx
+│   ├── react-app-env.d.ts
+│   ├── redux
+│   │   ├── hooks
+│   │   │   ├── appHooks.ts
+│   │   │   └── useProduct.ts
+│   │   ├── reducers
+│   │   │   ├── cartReducer.ts
+│   │   │   ├── productReducer.ts
+│   │   │   └── userReducer.ts
+│   │   ├── store.ts
+│   │   └── types
+│   │       ├── cart.ts
+│   │       ├── category.ts
+│   │       ├── product.ts
+│   │       └── user.ts
+│   ├── reportWebVitals.ts
+│   ├── setupTests.ts
+│   ├── styles
+│   │   ├── components
+│   │   │   ├── _footer.scss
+│   │   │   ├── _navbar.scss
+│   │   │   ├── _register.scss
+│   │   │   └── _searchproduct.scss
+│   │   ├── index.scss
+│   │   └── pages
+│   │       ├── _cart.scss
+│   │       ├── _home.scss
+│   │       ├── _login.scss
+│   │       ├── _products.scss
+│   │       └── _singleproduct.scss
+│   └── test
+│       ├── fitures
+│       │   └── testProduct.ts
+│       ├── reducers
+│       │   ├── productReducer.test.ts
+│       │   └── userReducer.test.ts
+│       └── utils
+│           └── testStore.ts
+└── tsconfig.json
+</pre>
 
 ## Key features available at the moment
 - Displays products from api in products page.
